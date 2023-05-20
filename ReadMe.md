@@ -1,2 +1,1 @@
-Ali Fala- 10120415
-Mohammad Ayash- 10120214
+This an MVC .Net app that calculate the GPA of a student over 100.
