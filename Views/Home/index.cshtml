@@ -1,0 +1,53 @@
+@model Grade
+@{
+    ViewBag.Title = "Index";
+    }
+
+<html>
+<head></head>
+<body>
+    <h2>Gpa Calculator</h2>
+        <div class="row">
+             @using (Html.BeginForm(FormMethod.Post))
+    {
+                <div class="form-group">
+                    <label asp-for="StudentName" >Student Name</label>
+                    <input type="text" class="form-control" name="StudentName" placeholder="name of the student"value="@ViewData["StudentName"]" required>
+                    </div><br>
+                <div class="form-group">
+                    <label asp-for="EnYear" class="form-label">Enrolled Year</label>
+                    <input type="text" class="form-control" name="EnYear" placeholder="Enrolled year" value="@ViewData["EnYear"]" required>
+                    </div><br>
+                    <div class="form-group">
+                        <label asp-for="Grade1" class="form-label">Course 1 Grade</label>
+                        <input type="text" class="form-control" name="Grade1" placeholder="Enter course1 grade" value="@ViewData["Grade1"]" required>
+                    </div><br>
+                    <div class="form-group">
+                        <label asp-for="Grade2" class="form-label">Course 2 Grade</label>
+                        <input type="text" class="form-control" name="Grade2" placeholder="Enter course2 grade" value="@ViewData["Grade2"]" required>
+                    </div><br>
+                    <div class="form-group">
+                        <label asp-for="Grade3" class="form-label">Course 3 Grade</label>
+                        <input type="text" class="form-control" name="Grade3" placeholder="Enter course3 grade" value="@ViewData["Grade3"]" required>
+                    </div><br>
+                                    <div class="form-group">
+                        <label asp-for="Gpa">GPA:</label>
+                        <input type="number" class="form-control" name="Gpa" placeholder="0" value="@ViewData["Gpa"]" readonly>
+                    </div><br>
+                    <div class=form-group>
+                        <input type="text" id=displayName value="@ViewData["StudentName"]" disabled>
+                    </div>
+                    <br>
+                    <div class=form-group>
+                        <input type="text" id=displayYear value="@ViewData["EnYear"]" disabled>
+                    </div>
+                    <br>
+                    <div class="form-group">
+                    <button type="submit" class="btn btn-primary mb-3">Calculate</button>
+                    <a class=" btn btn-success mb-3 " asp-action="Index">Clear</a>
+                </div>
+            }
+                      
+            </div>
+</body>
+</html>    
